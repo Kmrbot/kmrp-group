@@ -87,9 +87,9 @@ async def _(
         ))
         if final_ban_time == -1:
             # 踢出群
-            await ProtocolAdapter.set_group_kick(ProtocolAdapter.get_bot_id(bot), msg_type_id, src_user_id)
+            await ProtocolAdapter.Group.set_group_kick(ProtocolAdapter.get_bot_id(bot), msg_type_id, src_user_id)
         elif final_ban_time != 0:
             # 禁言
-            await ProtocolAdapter.set_group_ban(ProtocolAdapter.get_bot_id(bot), msg_type_id, src_user_id, final_ban_time)
+            await ProtocolAdapter.Group.set_group_ban(ProtocolAdapter.get_bot_id(bot), msg_type_id, src_user_id, final_ban_time)
     except nonebot.exception.ActionFailed as e:
         logger.warning(f"delete_msg fail ! error = {e}")

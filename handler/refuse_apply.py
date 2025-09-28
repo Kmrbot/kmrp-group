@@ -24,4 +24,4 @@ async def _(
         bot: AdapterBot,
         event: AdapterGroupMessageEvent):
     bot_id = ProtocolAdapter.get_bot_id(bot)
-    return await ProtocolAdapter.refuse_group_apply(bot_id, event)
+    return await ProtocolAdapter.Group.refuse_group_apply(bot_id, event)
