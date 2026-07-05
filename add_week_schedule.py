@@ -7,6 +7,7 @@ from utils import group_only, get_time_zone
 from utils.permission import white_list_handle
 
 avoid_at = on_command(cmd="周表", priority=5, block=False)  # 调低相应级别
+avoid_at.__doc__ = """周表"""
 avoid_at.handle(white_list_handle("group"))
 
 
